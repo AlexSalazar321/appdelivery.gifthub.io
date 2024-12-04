@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Delivery</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Delivery App</h1>
+        <div id="user-section">
+            <span id="user-info"></span>
+            <button id="auth-button">Login</button>
+        </div>
+        <nav>
+            <ul id="categories">
+                <li data-category="tacos">Tacos</li>
+                <li data-category="hamburguesas">Hamburguesas</li>
+                <li data-category="pizzas">Pizzas</li>
+                <li data-category="postres">Postres</li>
+                <li data-category="bebidas">Bebidas</li>
+                <li data-category="pollo-frito">Pollo Frito</li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="products"></section>
+        <section id="cart">
+            <h2>Carrito de Compras</h2>
+            <ul id="cart-items"></ul>
+            <p id="cart-total">Total: $0</p>
+            <button id="checkout-button">Realizar Pago</button>
+        </section>
+        <div id="auth-modal" class="modal">
+            <div class="modal-content">
+               <button class="close-modal" onclick="toggleAuthModal()">X</button>
+                <h2 id="auth-title">Login</h2>
+                <form id="auth-form">
+                    <input type="text" id="username" placeholder="Usuario" required>
+                    <input type="password" id="password" placeholder="Contraseña" required>
+                    <button type="submit">Enviar</button>
+                </form>
+                <button id="toggle-auth">¿No tienes cuenta? Regístrate</button>
+            </div>
+        </div>
+    </main>
+    <div id="payment-modal" class="modal">
+        <div class="modal-content">
+          <button class="close-modal" onclick="togglePaymentModal()">X</button>
+            <h2>Realizar Pago</h2>
+            <form id="payment-form">
+                <input type="text" id="card-name" placeholder="Nombre en la tarjeta" required>
+                <input type="text" id="card-number" placeholder="Número de tarjeta" required>
+                <input type="text" id="expiry-date" placeholder="Fecha de vencimiento (MM/AA)" required>
+                <input type="text" id="cvv" placeholder="CVV" required>
+                <button type="submit">Pagar</button>
+            </form>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
